@@ -1,4 +1,5 @@
 #!/bin/bash
 
-args=$(echo $* | sed -e 's/\\/\//g' -e 's/^\w:/\/mnt\/c/')
+ drv=$(echo $* | colrm 2 | tr '[:upper:]' '[:lower:]')
+args=$(echo $* | sed -e 's/\\/\//g' -e "s/^\w:/\/mnt\/$drv/")
 vim "$args"
