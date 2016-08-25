@@ -1,0 +1,4 @@
+#!/bin/bash
+
+args=$(echo $* | sed -e 's/\\/\//g' -e 's/^\w:/\/mnt\/c/')
+vim "$args"
